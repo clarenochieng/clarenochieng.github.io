@@ -10,8 +10,11 @@
 :root{
     --primary-color: white;
     --secondary-color: black;
-    --tertiary-color: orange;
+    --tertiary-color: darkorange;
     --footer-primary-color: black;
+    --navbar-primary-color: black;
+    --navbar-secondary-color: white;
+    --cv-primary-color: darkorange;
 }
 
 .dark-theme{
@@ -19,11 +22,13 @@
     --secondary-color: white;
     --tertiary-color: darkorange;
     --footer-primary-color: darkorange;  
+    --navbar-primary-color: darkorange;
+    --navbar-secondary-color: black;
+    --cv-primary-color: white;
 }
 
 html{
     height: 100%;
-   
 }
 
 body {
@@ -31,26 +36,56 @@ body {
     background-color: var(--primary-color);
     height: 100%;
     overflow-x: hidden;
-    min-width: 1000px;
 }
 
-@media only screen and (max-width: 750px){
-
+@media screen and (max-width: 925px){
     nav ul{
-        width: 100%;
-        position: absolute;
-        color: aqua;
-        top: 50px;
-        right: 0;
-        z-index: 2;
+        display: none;
     }
-    nav ul li{
-        display: block;
-    }
+
+
     .navbar-menu a{
+        margin-right: 2vw;
         display: block;
-        font-size: 25px;
         cursor: pointer;
+    }
+
+}
+
+@media screen and (min-width:925px) {
+
+
+    .navbar-menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .intro{
+        width: 84%;
+    }
+
+    .content-2 {
+        width: 84%;
+    }
+
+    .content-3{
+        width: 84%;
+    }
+
+}
+
+@media screen and (min-width:700px) {
+    .intro{
+        width: 50%;
+    }
+
+    .content-2{
+        width: 50%;
+    }
+
+    .content-3{
+        width: 50%;
     }
 }
 
@@ -70,25 +105,29 @@ nav {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content:center;
+    vertical-align: middle;
 }
+
+
 
 label.logo {
     color:darkorange;
     font-size: 35px;
     line-height: 80px;
-    padding: 0 100px;
+    padding: 0 10vw;
     font-weight: bold;
-    left: 5vw;
+    left: 5vw; 
+    margin-left: 8vw;
 }
 
 nav ul {
     float: right;
     list-style: none;
-    position: relative;
-    margin-right: 20px;
+    margin-right: 5vw;
     flex: 1;
     text-align: right;
+    display: inline-flex;
 }
 
 nav ul li {
@@ -130,7 +169,6 @@ nav ul li ul {
     display: none;
     position: absolute;
     background-color: var(--primary-color);
-    
 }
 
 nav ul li ul li {
@@ -154,32 +192,36 @@ nav ul li ul li a:hover{
     background-color: var(--secondary-color);
     color: var(--primary-color);
     transition: .25s;
-    
 }
 
 .active, nav ul li:hover{
-    background: var(--secondary-color);
+    background: var(--navbar-primary-color);
     height: 50px;
     border-radius: 25px;
     color: var(--primary-color);
     cursor: pointer;
 }
+
+.navbar-menu{
+    margin: 20px 20px 20px 20px;
+}
+
 .navbar-menu a{
     font-size: 25px;
-    display: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     cursor: pointer;
+}
+
+.light-mode{
+    margin: 20px 20px 20px 20px;
 }
 
 .light-mode a{
     font-size: 25px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    margin-right: 30px;
     cursor: pointer;
-}
-
-.intro{
-    font: bold;
 }
 
 .social-links{
@@ -195,11 +237,12 @@ main{
 }
 
 .intro{
+    font: bold;
     color: var(--secondary-color);
     margin-left: 8%;
     margin-top: 20%;
-    height: 200px;
-    width: 50%;
+    margin-bottom: 6vh;
+    height: auto;
 }
 
 main hr{
@@ -212,26 +255,31 @@ main hr{
 }
 
 .content-1{
-    height: 100px;
+    height: auto;
     margin-top: 5%;
     margin-left: 8%;
+    margin-bottom: 3vh;
 }
 
 .content-2{
-    height: 150px;
+    height: auto;
     margin-left: 8%;
+    text-align: justify;
+    margin-bottom: 5vh;
 }
 
 .content-3{
     align-items: flex-end;
-    width:50%;
-    height: 150px;
+    height: auto;
     margin-left: 8%;
+    text-align: justify;
+    margin-bottom: 5vh;
 }
 
 .content-5{
+    margin-top: 10%;
     text-decoration: none;
-    height:50px;
+    height:auto;
     width: 200px;
     margin-left: 8%;
     margin-top: 5%;
@@ -252,15 +300,11 @@ main hr{
 
 
 .content-5:hover{
-    background-color: black;
+    background-color: var(--secondary-color);
 }
 
 .content-5:hover a{
-    color: var(--primary-color)
-}
-
-.content-4 a:hover{
-    color: var(--secondary-color);
+    color: var(--navbar-secondary-color);
 }
 
 .push{
@@ -281,7 +325,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 130px;
 }
 
 footer div h3{
@@ -291,10 +335,10 @@ footer div h3{
 
 .social-links{
     margin-right: 30%;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 0;
     width: 120px;
-    height: 150px;
+    height: 120px;
     display: block;
 }
 
@@ -306,9 +350,9 @@ footer div h3{
 .useful-links{
     color: var(--primary-color);
     margin-left: 30%;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 120px;
-    height: 150px;
+    height: 120px;
 }
 
 .useful-links a{
@@ -319,10 +363,12 @@ footer div h3{
 
 .copyright{
     color: var(--primary-color);
-    height: 40px;
+    height: auto;
     width: 100vw;
+    margin-top: 5px;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 
 .input-page{
