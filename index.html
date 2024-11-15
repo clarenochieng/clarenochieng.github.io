@@ -1,117 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <title>Portfolio Website</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="This is my portfolio website">
-        <meta name="author" content="Claren Ochieng">
-        <meta name="keywords" content="Claren, Claren Ochieng">
-        <meta name="viewport" content="width=device-width, initial-scale= 1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital@1&display=swap" rel="stylesheet">
-    </head>
-    
-  </head>
-  <body>
-      <header>
-        <nav>
-            <label class="logo">Portfolio</label> 
-            <ul id="menu-list">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            
-            <div class="light-mode">
-                <a><i class="fa-solid fa-moon" id="light-mode-dark-mode"></i></a>
-            </div>
-            <div class="navbar-menu">
-                <a><i class="fa-solid fa-bars" onclick="togglemenu()"></i></a>
-            </div>            
-        </nav>
-    </header>
-    <main>
-    
-    <div class="intro">
-        <h1>Hiya! I'm Claren Ochieng.</h1>
-        <h2>I am a software developer based in Nairobi, Kenya.</h2>
-    </div>
-    <hr class="hr-1">
-    <div class="content-1">
-        <h2>
-            I am passionate about...
-        </h2>
-    </div>
-
-    <div class="content-2">
-        <h2>Web Development</h2>
-        <p>I am skilled in HTML, CSS and JavaScript to make interactive websites from scratch.</p>
-    </div>
-
-    <div class="content-3">
-        <h2>Data Science and Machine Learning</h2>
-        <p>With 2+ years of experience using Python, I am also competent in data science and machine learning with techniques such as computer vision, natural language processing and convolutional neural networks.</p>
-    </div>
-
-    <hr>
-
-    <div class="content-5">
-        <a href="#">
-            <div class="content-4">Download CV</div>
-        </a>
-    </div>
-
-    <div class="push"></div>
-    </main>
-    <footer>
-        <div class="footer-1">
-            <div class="useful-links">
-                <h3>Useful Links</h3>
-                <a href="#">Home</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="social-links">
-                <h3>Socials</h3>
-                <a href="https://www.linkedin.com/in/claren-ochieng-558176218/" class="footer-link"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/clarenochieng" class="footer-link"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:clarenclarkson1@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </div>
-        <br>
-        
-        <div class="copyright">
-            <p>Copyright &copy; 2022 Claren Ochieng</p>            
-        </div>        
-
-    </footer>
-    <script>
-        var icon = document.getElementById("light-mode-dark-mode");
-        icon.onclick = function(){
-            document.body.classList.toggle("dark-theme");
-            if (document.body.classList.contains("dark-theme")){
-                icon.class = "fa-regular fa-sun-bright"
-            } else {
-                icon.class="fa-solid fa-moon"
-            }    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Claren Ogira">
+    <title>Claren Ogira's Personal Website</title>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+            background-color: #121212;
+            color: #f4f4f4;
+            font-size: 1.5em;
         }
-    </script>
-    <script>
-        var menu = document.getElementById("menu-list");
-        menu.style.maxHeight ="0px";
-        function togglemenu(){
-            if (menu.style.maxHeight =="0px"){
-                menu.style.maxHeight ="130px";
-            } else{
-                menu.style.maxHeight ="0px";
-            }
+        .code-line {
+            margin-left: 40px;
+            line-height: 1.5;
         }
-    </script>
-  </body>
+        .code-keyword {
+            color: #569cd6;
+        }
+        .code-string {
+            color: #d69d85;
+        }
+        .code-method {
+            color: #4ec9b0;
+        }
+	.code-comment {
+            color: #6a9955;
+	    font-style: italic;
+        }
+	.resume {
+            color: #d69d85;
+        }
+        .social-links a {
+            color: #9cdcfe;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #f4f4f4;
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p class="code-keyword">class <span class="code-string">PersonalWebsite</span>:</p>
+
+	<p class="code-comment">&emsp;&emsp;&emsp;# Seeking internship positions for Summer 2025.</p>
+        <p class="code-line"><span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-keyword">self</span>):</p>
+        <p class="code-line">&emsp;<span class="code-keyword">self</span>.name = "<span class="code-string">Claren Ogira</span>"</p>
+        <p class="code-line">&emsp;<span class="code-keyword">self</span>.major = "<span class="code-string">Computer Engineering</span>"</p>
+        <p class="code-line">&emsp;<span class="code-keyword">self</span>.interests = "<span class="code-string">Hardware, Software, Artificial Intelligence</span>"</p>
+	<p class="code-line">&emsp;<span class="code-keyword">self</span>.graduation_date = "<span class="code-string">May 2027</span>"</p>
+	<p class="code-line">&emsp;<span class="code-keyword">self</span>.languages = ["<span class="code-string">Python</span>", "<span class="code-string">Java</span>", "<span class="code-string">C</span>", "<span class="code-string">C++</span>"] <span class="code-comment"># Learning Verilog</span></p>
+
+	<p class="code-line"><span class="code-keyword">def</span> <span class="code-method">download_resume</span>(<span class="code-keyword">self</span>):</p>
+        <p class="code-line">&emsp;<span class="code-keyword">return</span> "<a href='[Link to Your Resume]' target='_blank' class="resume">Download Resume</a>"</p>
+
+
+        <p class="code-line"><span class="code-keyword">self</span>.social_links = {</p>
+        <p class="code-line">&emsp;"LinkedIn": "<a href="https://www.linkedin.com/in/clarenochieng/" target="_blank" class="code-string">LinkedIn</a>",</p>
+        <p class="code-line">&emsp;"GitHub": "<a href="https://github.com/clarenochieng" target="_blank" class="code-string">GitHub</a>",</p>
+	<p class="code-line">&emsp;"Email": "<a href="mailto:ogira@seas.upenn.edu" class="code-string">Email</a>"</p>
+        <p class="code-line">}</p>
+    </div>
+
+</body>
 </html>
- 
+
